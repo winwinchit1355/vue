@@ -1,24 +1,31 @@
 <template>
   <h1>Hello Testing</h1>
-  <button @click="start">Play</button>
-  <Block v-if="isPlaying"/>
+  
+  <button @click="start"  :disabled="isPlaying" >Play</button>
+  <Results v-if="score" :score="score" />
+  <Block v-if="isPlaying" :delay="delay" @end="endGame" />
 </template>
 <script>
+import Results from './components/Results.vue';
 import Block from './components/Block.vue'
 export default{
   name: 'App',
-  components: {Block},
+  components: {Block,Results},
   data(){
     return {
       isPlaying: false,
       delay:null,
+      score:null
     }
   },
   methods:{
     start(){
       this.delay = 2000 + Math.random() * 5000;
-      console.log(this.delay);
-      this.isPlaying = !this.isPlaying;
+      this.isPlaying = true;
+    },
+    endGame(reactionTime){
+      this.score = reactionTime;
+      this.isPlaying = false;
     }
   }
 }
