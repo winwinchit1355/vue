@@ -18,14 +18,8 @@
             <label for="terms">Accept Terms and Conditions</label>
         </div>
 
-        <div>
-            <input type="checkbox" value="girl" v-model="names">
-            <label for="names">Girl</label>
-            <input type="checkbox" value="boy" v-model="names">
-            <label for="names">Boy</label>
-            <input type="checkbox" value="none" v-model="names">
-            <label for="names">None</label>
-        </div>
+        <label for="tempSkill">Skills</label>
+        <input type="text" v-model="tempSkill" @keyup="addSkill" >
 
         <button>Register</button>
     </form>
@@ -33,7 +27,6 @@
     <p>password: {{ password }}</p>
     <p>role: {{ role }}</p>
     <p>terms: {{ terms }}</p>
-    <p>names: {{ names }}</p>
 </template>
 <script>
 export default {
@@ -43,7 +36,14 @@ export default {
             password:'',
             role:'designer',
             terms:'',
-            names:[]
+            names:[],
+            tempSkill:'',
+            skills:[]
+        }
+    },
+    methods:{
+        addSkill(e){
+            console.log(e);
         }
     }
 }
