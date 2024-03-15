@@ -14,8 +14,17 @@
         </select>
 
         <div class="terms">
-            <input type="checkbox" v-model="checkbox">
-            <label for="checkbox">Accept Terms and Conditions</label>
+            <input type="checkbox" v-model="terms">
+            <label for="terms">Accept Terms and Conditions</label>
+        </div>
+
+        <div>
+            <input type="checkbox" value="girl" v-model="names">
+            <label for="names">Girl</label>
+            <input type="checkbox" value="boy" v-model="names">
+            <label for="names">Boy</label>
+            <input type="checkbox" value="none" v-model="names">
+            <label for="names">None</label>
         </div>
 
         <button>Register</button>
@@ -23,7 +32,8 @@
     <p>email: {{ email }}</p>
     <p>password: {{ password }}</p>
     <p>role: {{ role }}</p>
-    <p>checkbox: {{ checkbox }}</p>
+    <p>terms: {{ terms }}</p>
+    <p>names: {{ names }}</p>
 </template>
 <script>
 export default {
@@ -32,7 +42,8 @@ export default {
             email:'',
             password:'',
             role:'designer',
-            checkbox:''
+            terms:'',
+            names:[]
         }
     }
 }
