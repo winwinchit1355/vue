@@ -1,17 +1,24 @@
 <template>
-    <form>
-        <label for="email">Email</label>
-        <input type="email" required v-model="email" >
-
-        <label for="password">Password</label>
-        <input type="password" required v-model="password" >
-
-        <label for="role">Role</label>
-        <select v-model="role">
-            <option value="developer">Developer</option>
-            <option value="designer">Designer</option>
-            <option value="client">Client</option>
-        </select>
+    <form @submit="handleSubmit">
+        <div class="email">
+            <label for="email">Email</label>
+            <input type="email" required v-model="email" >
+        </div>
+    
+        <div class="password">
+            <label for="password">Password</label>
+            <input type="password" required v-model="password" >
+            <span class="error-msg" v-if="passwordErr">{{ passwordErr }}</span>
+        </div>
+    
+        <div class="role">
+            <label for="role">Role</label>
+            <select v-model="role">
+                <option value="developer">Developer</option>
+                <option value="designer">Designer</option>
+                <option value="client">Client</option>
+            </select>
+        </div>
 
         <div class="terms">
             <input type="checkbox" v-model="terms">
@@ -19,9 +26,14 @@
         </div>
 
         <label for="tempSkill">Skills</label>
-        <input type="text" v-model="tempSkill" @keyup="addSkill" >
+        <input type="text" v-model="tempSkill" @keyup.alt="addSkill" >
 
-        <button>Register</button>
+        <div v-for="skill in skills" :key="skill" class="pill">
+            <span @click="deleteSkill(skill)">{{ skill }}</span>
+        </div>
+        <div class="submit">
+            <button >Register</button>
+        </div>
     </form>
     <p>email: {{ email }}</p>
     <p>password: {{ password }}</p>
@@ -38,12 +50,29 @@ export default {
             terms:'',
             names:[],
             tempSkill:'',
-            skills:[]
+            skills:[],
+            passwordErr:''
         }
     },
     methods:{
         addSkill(e){
-            console.log(e);
+            if(e.key === ',' && this.tempSkill)
+            {
+                if(!this.skills.includes(this.tempSkill))
+                {
+                    this.skills.push(this.tempSkill);
+                }
+                this.tempSkill = '';
+            }
+        },
+        deleteSkill(skill){
+            this.skills = this.skills.filter((item)=>{
+                return item !== skill;
+            })
+        },
+        handleSubmit(e){
+            e.preventDefault();
+            this.passwordErr = this.password.length < 5 ? 'Password must be at lease 5 words.':'';
         }
     }
 }
@@ -102,5 +131,20 @@ export default {
         margin: 0 10px 0 0;
         position: relative;
         top: 2px;
+    }
+    .pill{
+        display: inline-block;
+        margin: 20px 10px 0 0;
+        padding:6px 12px;
+        background: #eee;
+        border-radius: 20px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .error{
+        color: red;
+        font-size: 11px;
     }
 </style>
