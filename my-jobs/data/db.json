@@ -1,0 +1,24 @@
+{
+    "jobs":[
+        {
+            "title":"HTML",
+            "id":1,
+            "details":"lorem"
+        },
+        {
+            "title":"CSS",
+            "id":2,
+            "details":"lorem"
+        },
+        {
+            "title":"Javascript",
+            "id":3,
+            "details":"lorem"
+        }
+    ],
+    "blogs":[
+        {
+            "title":"Welcome to New York"
+        }
+    ]
+}
