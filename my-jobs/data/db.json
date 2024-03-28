@@ -3,17 +3,22 @@
         {
             "title":"HTML",
             "id":1,
-            "details":"lorem"
+            "details":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis maxime voluptatibus aspernatur nisi sequi obcaecati. Aut omnis modi excepturi esse, repellendus, dolore suscipit doloremque aliquid cumque delectus cupiditate, accusantium iste?"
         },
         {
             "title":"CSS",
             "id":2,
-            "details":"lorem"
+            "details":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis maxime voluptatibus aspernatur nisi sequi obcaecati. Aut omnis modi excepturi esse, repellendus, dolore suscipit doloremque aliquid cumque delectus cupiditate, accusantium iste?"
         },
         {
             "title":"Javascript",
             "id":3,
-            "details":"lorem"
+            "details":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis maxime voluptatibus aspernatur nisi sequi obcaecati. Aut omnis modi excepturi esse, repellendus, dolore suscipit doloremque aliquid cumque delectus cupiditate, accusantium iste?"
+        },
+        {
+            "title":"PHP",
+            "id":4,
+            "details":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis maxime voluptatibus aspernatur nisi sequi obcaecati. Aut omnis modi excepturi esse, repellendus, dolore suscipit doloremque aliquid cumque delectus cupiditate, accusantium iste?"
         }
     ],
     "blogs":[

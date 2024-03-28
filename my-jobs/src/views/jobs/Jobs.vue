@@ -14,11 +14,15 @@ export default {
     data(){
         return {
             jobs:[
-            {id:1,title:'Web Developer',details:'Html,css,javascript'},
-            {id:2,title:'Web Designer',details:'Photoshop,figma'},
-            {id:3,title:'Manager',details:'managment'},
+            
         ]
         }
+    },
+    mounted(){
+        fetch('http://localhost:3000/jobs')
+        .then((response)=> response.json())
+        .then(data=> this.jobs = data)
+        .catch(error=>console.log(error.message));
     }
 }
 </script>
