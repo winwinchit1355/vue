@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <p ref="p">My name is {{ name }}. I am {{ age }} years old.</p>
+    <input type="text" v-model="name">
     <button @click="handleClick">Click Me</button>
   </div>
 </template>
@@ -9,22 +10,18 @@ import { ref } from 'vue';
 export default{
   name:'Home',
   setup(){
-    console.log('setup');
-    let name="WWC";
-    let age=30;
-    const p = ref(null);
-    console.log(p,p.value);
+    const name=ref("WWC");
+    const age=ref(30);
 
     const handleClick = () =>{
-      console.log(p,p.value);
-      p.value.classList.add('test');
-      p.value.textContent = 'hello world';
+      name.value = 'Win Win Chit';
+      age.value = 55;
     }
-    return {name,age,handleClick,p};
+    return {name,age,handleClick};
   },
   data(){
     return {
-      age: 40,
+      score: 40,
     }
   }
 }
