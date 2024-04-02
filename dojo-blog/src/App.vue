@@ -1,4 +1,10 @@
 <template>
+  <div class="nav">
+    <div id="nav">
+    <RouterLink to="/home">Home</RouterLink>
+  </div>
+  <RouterView />
+  </div>
   <div class="home">
     <p ref="p">My name is {{ name }}. I am {{ age }} years old.</p>
     <button @click="age--">-</button>
