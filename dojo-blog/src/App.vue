@@ -1,18 +1,19 @@
 <template>
   <div class="nav">
     <div id="nav">
-    <RouterLink to="/home">Home</RouterLink>
+    <RouterLink to="/home">Home</RouterLink> | 
+    <RouterLink to="/about">About</RouterLink>
   </div>
   <RouterView />
   </div>
-  <div class="home">
+  <!-- <div class="home">
     <p ref="p">My name is {{ name }}. I am {{ age }} years old.</p>
     <button @click="age--">-</button>
     <button @click="age++">+</button>
     <br>
     <input type="text" v-model="name">
     <button @click="handleClick">Click Me</button>
-  </div>
+  </div> -->
 </template>
 <script>
 import { ref } from 'vue';
